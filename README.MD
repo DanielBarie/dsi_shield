@@ -15,6 +15,7 @@ You use it at your own risk, there's no warranty.
 - This is an XC6 Spartan project. It cannot be synthesized using Xilinx' new toolchain (Vivado). You'll have to use the original ISE toolchain.
 - Version 2 of the HDL part depends on the original author's implementation of a RISC-V core. Don't get it from his github. It won't work. Go to the Open Hardware Repository instead: https://ohwr.org/project/urv-core. Download the entire repository and unzip it to the subdirectory ip_cores/urv-core. Else, ISE will complain about missing files. Why not the version from the author's github? It won't implement. 
 - Adding the Xilinx HDMI IP needs a little care: The unpack script will write read-only files. So patching fails. This repo contains a modified version of the unpack script.
+- Running with default settings there will be two timing errors (zero point something ns during RAM access,  Timing constraint: TS_pll_clk_sys = PERIOD TIMEGRP "pll_clk_sys" TS_clk_25m_i * 3.875 HIGH 50%; ). These may be fixed by re-running the timing analysis against auto-generated timing constraints (or getting a faster FPGA :P).
 
 # License
 
