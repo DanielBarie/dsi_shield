@@ -29,4 +29,4 @@ You use it at your own risk, there's no warranty.
 
 - Andrew "Bunnie" Huang, for his EDID generation tools (Chumby WebTV project).
 
-- The original author of this project (https://github.com/twlostow/dsi-shield, https://hackaday.io/project/364-mipi-dsi-display-shieldhdmi-adap
+- The original author of this project (https://github.com/twlostow/dsi-shield, https://hackaday.io/project/364-mipi-dsi-display-shieldhdmi-adap).
