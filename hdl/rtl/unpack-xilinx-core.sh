@@ -9,5 +9,6 @@ fi
 
 unzip -j $ARCH "xapp495/dvi_demo/rtl/common/*.v"  -d hdmi_common
 unzip -j $ARCH "xapp495/dvi_demo/rtl/rx/*.v"  -d hdmi_rx
+chmod -R a+rw *
 
 patch -p0 < xapp495.patch 
