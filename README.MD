@@ -17,6 +17,8 @@ You use it at your own risk, there's no warranty.
 - Adding the Xilinx HDMI IP needs a little care: The unpack script will write read-only files. So patching fails. This repo contains a modified version of the unpack script.
 - Running with default settings there will be two timing errors (zero point something ns during RAM access,  Timing constraint: <code>TS_pll_clk_sys = PERIOD TIMEGRP "pll_clk_sys" TS_clk_25m_i * 3.875 HIGH 50%;</code> ). These may be fixed by re-running the timing analysis against auto-generated timing constraints (or getting a faster FPGA :P).
 - Xilinx's old ISE doesn't seem to be as good as the new one (Vivado) when doing consistency checks wrt bus/signal width. When synthesizing in Vivado, there will be several errors like this one: <code>[Synth 8-549] port width mismatch for port 'pix_i': port width = 24, actual width = 48</code>. You'll have to fix these: dsi_core.v contains a definition for <code>g_lanes</code> which is set to three. Modify it to be four (in accordance with the definition in rev2_top.vhd). Four errors gone.
+- You may safely ignore the one, unrouted trace in v2 of the PCB. KiCad doesn't realize there is an overlay between two polygons of the 2v5 net and draws this line. 
+![Unconnected trace, may safely be ignored.](https://github.com/DanielBarie/dsi_shield/blob/master/pcb/rev2/unconnected_2v5.png "Ignore this one, unrouted trace in v2 of the PCB")
 
 
 # Additional Information
